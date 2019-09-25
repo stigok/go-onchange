@@ -43,7 +43,12 @@ onchange -i -r bash -c "go build && notify-send go 'Build complete' && ./foobin"
 
 ## Install
 
-TODO
+Download source and install with `go install`
+
+```
+$ git clone https://github.com/stigok/go-onchange && cd go-onchange
+$ go install
+```
 
 ## Building
 
