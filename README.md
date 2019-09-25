@@ -43,16 +43,19 @@ onchange -i -r bash -c "go build && notify-send go 'Build complete' && ./foobin"
 
 ## Install
 
-Download source and install with `go install`
+```
+$ go install github.com/stigok/go-onchange
+```
 
-```
-$ git clone https://github.com/stigok/go-onchange && cd go-onchange
-$ go install
-```
+Make sure you have `$GOPATH/bin` added to your `$PATH`.
 
 ## Building
 
 ```
-$ go get github.com/radovskyb/watcher
 $ go build
 ```
+
+## License
+
+The underlying library used to watch files is written by Benjamin Radovsky (BSD 3-Clause "New" or "Revised" License).
+Read the full license text in [pkg/github.com/radovskyb/watcher/LICENSE]().
