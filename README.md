@@ -10,7 +10,7 @@ Please report any issues you encounter.
 Run a command when watched files change.
 
 Usage:
-./onchange [options] command [args]
+onchange [options] command [args]
 
 Options:
   -c    clear screen before each execution
