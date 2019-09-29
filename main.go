@@ -54,7 +54,7 @@ func main() {
 
 	flag.StringVar(&dir, "w", ".",
 		"directory to search from")
-	flag.StringVar(&pat, "p", ".+",
+	flag.StringVar(&pat, "f", ".+",
 		"file pattern regular expression")
 	flag.BoolVar(&rec, "r", false,
 		"watch directory recursively")
