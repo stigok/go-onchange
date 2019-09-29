@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/radovskyb/watcher"
+	"onchange/pkg/watcher"
 )
 
 // Execute a cancellable command
