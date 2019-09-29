@@ -48,7 +48,7 @@ func main() {
 	var (
 		pat, dir, cmd                  string
 		rec, clr, immediate, kill, dry bool
-		rundelay                       int64
+		rundelay, pollInt              int64
 		cmdargs                        []string
 	)
 
@@ -66,6 +66,8 @@ func main() {
 		"kill long-running command on new events")
 	flag.BoolVar(&dry, "dry", false,
 		"show a list of watched paths and exit")
+	flag.Int64Var(&pollInt, "p", 100,
+		"file poll interval (ms)")
 	flag.Int64Var(&rundelay, "d", 10,
 		"ignore too fast reruns within time limit (ms)")
 
@@ -164,7 +166,7 @@ func main() {
 	}()
 
 	// Start the watching process - it'll check for changes every 100ms.
-	if err := w.Start(time.Millisecond * 100); err != nil {
+	if err := w.Start(time.Millisecond * time.Duration(pollInt)); err != nil {
 		log.Fatalln(err)
 	}
 }
