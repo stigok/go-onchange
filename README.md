@@ -18,10 +18,12 @@ Options:
         ignore too fast reruns within time limit (ms) (default 10)
   -dry
         show a list of watched paths and exit
+  -f string
+        file pattern regular expression (default ".+")
   -i    run command immediately (don't wait for first event)
   -k    kill long-running command on new events
-  -p string
-        file pattern regular expression (default ".+")
+  -p int
+        file poll interval (ms) (default 100)
   -r    watch directory recursively
   -w string
         directory to search from (default ".")
@@ -32,7 +34,7 @@ Options:
 Watch all go files recursively from current directory and run `go build` on changes:
 
 ```
-onchange -c -i -p \.go$ -r go build
+onchange -c -i -f \.go$ -r go build
 ```
 
 Run a built binary after it has been built, and notify when build is complete:
